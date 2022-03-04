@@ -1,0 +1,18 @@
+header {
+  background-color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  .container {
+    display: flex;
+    width: 90%;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+
