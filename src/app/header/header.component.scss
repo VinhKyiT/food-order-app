@@ -1,14 +1,15 @@
 header {
   background-color: #fff;
   padding: 0.5rem;
-  display: flex;
+  display: flex!important;
   justify-content: center;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  max-height: 5rem;
   .container {
-    display: flex;
+    display: flex!important;
     width: 90%;
     .row {
-      display: flex;
+    display: flex!important;
       justify-content: space-between;
       align-items: center;
       width: 100%;
