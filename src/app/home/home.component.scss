@@ -1,13 +1,161 @@
-ul {
+@mixin transition($in) {
+  transition: $in;
+  -webkit-transition: $in;
+  -moz-transition: $in;
+  -o-transition: $in;
+  -ms-transition: $in;
+}
+@mixin transform($in) {
+  transform: $in;
+  -webkit-transform: $in;
+  -moz-transform: $in;
+  -o-transform: $in;
+  -ms-transform: $in;
+}
+@mixin animation($in) {
+  animation: $in;
+  -webkit-animation: $in;
+  -moz-animation: $in;
+  -o-animation: $in;
+  -ms-animation: $in;
+}
+.container {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0;
-  li {
+  padding: 0 80px;
+  .row {
     display: flex;
-    flex-direction: column;
-    margin: 20px 10px 10px 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
     overflow: hidden;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0;
+      li {
+        margin-top: 20px;
+        .card {
+          position: relative;
+          // border: 1px solid #ccc;
+          border-radius: 0.25rem;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 0.25rem;
+          }
+          .card-body {
+            padding: 10px 15px;
+            .food-tags {
+              color: rgba(0, 0, 0, 0.5);
+            }
+            .food-info {
+              display: flex;
+              .cook-time {
+                margin-right: 20px;
+                span {
+                  margin-left: 5px;
+                }
+              }
+              .stars {
+                i {
+                  color: #ffc107;
+                }
+                span {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+          .food-price {
+            padding-bottom: 15px;
+          }
+          .button-area {
+            .button {
+              outline: none;
+              border: none;
+              padding: 10px;
+              display: block;
+              margin: 10px auto;
+              cursor: pointer;
+              font-size: 18px;
+              position: relative;
+              border: 2px solid #fff;
+
+              @include transition(all 0.5s ease);
+            }
+            .action-btn {
+              overflow: hidden;
+              span {
+                color: #333;
+                display: inline-block;
+                @include transition(all 0.3s ease);
+              }
+              .icon {
+                position: absolute;
+                left: -37px;
+                top: 0;
+                color: #fff;
+                padding: 10px;
+                background-color: #18ac13;
+                @include transition(all 0.3s ease);
+              }
+              &:hover {
+                .icon {
+                  left: 0px;
+                }
+                span {
+                  color: #18ac13;
+                  margin-left: 40px;
+                }
+              }
+            }
+          }
+          .card-badge {
+            position: absolute;
+            top: 10px;
+            left: -3px;
+            background-color: #18ac13;
+            color: #fff;
+            padding: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 5px 5px 5px 0;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 27px;
+              left: 0;
+              width: 3px;
+              height: 5px;
+              clip-path: polygon(100% 0, 100% 100%, 0 0);
+              background-color: #13920f;
+            }
+          }
+          .card-favorite {
+            position: absolute;
+            top: 10px;
+            right: -3px;
+            background-color: #d16d10;
+            color: #fff;
+            padding: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 5px 5px 0 5px;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 27px;
+              right: 0;
+              width: 3px;
+              height: 5px;
+              clip-path: polygon(100% 0, 0 0, 0 100%);
+              background-color: #b15b0b;
+            }
+          }
+        }
+      }
+    }
   }
 }

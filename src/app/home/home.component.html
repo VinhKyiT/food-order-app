@@ -1,15 +1,46 @@
-<ul>
-  <li *ngFor="let food of foods">
-    <div class="card" style="width: 18rem">
-      <img src="{{ food.imageUrls[0] }}" class="{{ food.name }}" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <ul>
+      <li *ngFor="let food of foods">
+        <div class="card" style="width: 18rem">
+          <img
+            src="{{ food.imageUrls[0] }}"
+            class="{{ food.name }}"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="food-name">{{ food.name }}</h4>
+            <div class="food-tags">{{ food.tags?.join(" - ") }}</div>
+            <div class="food-info">
+              <div class="cook-time">
+                <i class="far fa-clock"></i>
+                <span>{{ food.cookTime }} </span>
+              </div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <span>{{ food.star }}</span>
+              </div>
+            </div>
+            <div class="food-price">{{ food.price }}$</div>
+            <div class="button-area">
+              <div class="button action-btn">
+                <div class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <span>Buy</span>
+              </div>
+              <div class="button action-btn">
+                <div class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <span>Add to cart</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-badge">Promo</div>
+          <div *ngIf="food.favorite" class="card-favorite">Favorite</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
