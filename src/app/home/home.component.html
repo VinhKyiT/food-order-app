@@ -1,5 +1,6 @@
 <div class="container">
   <app-search></app-search>
+  <app-tags></app-tags>
   <div class="row">
     <ul>
       <li *ngFor="let food of foods">
@@ -11,7 +12,10 @@
           />
           <div class="card-body">
             <h4 class="food-name">{{ food.name }}</h4>
-            <div class="food-tags">{{ food.tags?.join(" - ") }}</div>
+            <div class="food-tags">
+              <i class="fas fa-tags"></i>
+              <span>{{ food.tags?.join(" - ") }}</span>
+            </div>
             <div class="food-info">
               <div class="cook-time">
                 <i class="far fa-clock"></i>

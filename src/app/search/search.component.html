@@ -2,7 +2,7 @@
   <div class="CardInner">
     <label>Search for your favourite food</label>
     <div class="container">
-      <div class="Icon">
+      <div class="Icon" (click)="search()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -20,7 +20,10 @@
         </svg>
       </div>
       <div class="InputContainer">
-        <input placeholder="It just can't be pizza..." [value]="searchTerm" />
+        <input
+          placeholder="It just can't be pizza..."
+          [(ngModel)]="searchTerm"
+        />
       </div>
     </div>
   </div>

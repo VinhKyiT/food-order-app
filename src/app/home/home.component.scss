@@ -26,12 +26,11 @@
   align-items: center;
   .row {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     overflow: hidden;
     ul {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
       padding: 0;
       li {
@@ -49,8 +48,14 @@
           }
           .card-body {
             padding: 10px 15px;
+            h4 {
+              line-height: 5px;
+            }
             .food-tags {
               color: rgba(0, 0, 0, 0.5);
+              span {
+                margin-left: 5px;
+              }
             }
             .food-info {
               display: flex;
@@ -71,6 +76,8 @@
             }
           }
           .food-price {
+            margin-top: 10px;
+            font-size: 1.2rem;
             padding-bottom: 15px;
           }
           .button-area {
@@ -123,7 +130,7 @@
             padding: 5px;
             font-size: 0.75rem;
             font-weight: bold;
-            border-radius: 5px 5px 5px 0;
+            border-radius: 0 3px 3px 0;
             &::before {
               content: "";
               position: absolute;
@@ -144,7 +151,7 @@
             padding: 5px;
             font-size: 0.75rem;
             font-weight: bold;
-            border-radius: 5px 5px 0 5px;
+            border-radius: 3px 0 0 3px;
             &::before {
               content: "";
               position: absolute;
