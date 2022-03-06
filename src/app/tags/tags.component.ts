@@ -1,4 +1,6 @@
+import { Tags } from './../shared/models/tag';
 import { Component, OnInit } from '@angular/core';
+import { FoodService } from '../services/food/food.service';
 
 @Component({
   selector: 'app-tags',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagsComponent implements OnInit {
 
-  constructor() { }
+  tags: Array<Tags> = [];
+
+  constructor(private fs: FoodService) { }
 
   ngOnInit(): void {
+    this.tags = this.fs.getAllTags();
   }
 
 }

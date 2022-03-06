@@ -79,12 +79,16 @@ export class FoodService {
 
   tags: Array<Tags> = [
     {
+      name: 'all',
+      count: this.foodList.length
+    },
+    {
       name: 'italian',
       count: 2
     },
     {
       name: 'american',
-      count: 2
+      count: 3
     },
     {
       name: 'japanese',
