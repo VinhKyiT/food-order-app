@@ -126,6 +126,10 @@ export class FoodService {
     return this.foodList;
   }
 
+  getById(id: number): Foods {
+    return this.getAll().find(food => food.id === (+id))!; //convert id from string to number
+  }
+
   getAllTags():Array<Tags> {
     return this.tags;
   }

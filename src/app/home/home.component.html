@@ -8,10 +8,13 @@
           <img
             src="{{ food.imageUrls[0] }}"
             class="{{ food.name }}"
-            alt="..."
+            alt="{{ food.name }}"
+            routerLink="/detail/{{ food.id }}"
           />
           <div class="card-body">
-            <h4 class="food-name">{{ food.name }}</h4>
+            <h4 class="food-name" routerLink="/detail/{{ food.id }}">
+              {{ food.name }}
+            </h4>
             <div class="food-tags">
               <i class="fas fa-tags"></i>
               <span>{{ food.tags?.join(" - ") }}</span>

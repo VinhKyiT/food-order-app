@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="left">
+    <div class="image">
+      <img [src]="food!.imageUrls[0]" [alt]="food!.name" />
+    </div>
+  </div>
+  <div class="right">
+    <div class="name">
+      <h1>{{ food!.name }}</h1>
+    </div>
+    <div class="description">
+      <p>{{ food!.tags!.join(" - ") }}</p>
+    </div>
+    <div class="price">
+      <p>{{ food!.price | currency: "USD":true:"1.2-2" }}</p>
+    </div>
+    <div class="quantity">
+      <span>Quantity:</span>
+      <input type="number" />
+    </div>
+    <div class="add-to-cart">
+      <button>Add to cart</button>
+    </div>
+  </div>
+</div>
